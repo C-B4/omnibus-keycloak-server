@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/aerobase/omnibus-software.git
+  remote: git://github.com/C-B4/omnibus-software.git
   revision: eacf073794fd98d1c2018206e8ebcae353e28b2b
   branch: master
   specs:

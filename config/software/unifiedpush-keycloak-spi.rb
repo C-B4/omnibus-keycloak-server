@@ -18,7 +18,7 @@ name "unifiedpush-keycloak-spi"
 default_version "master"
 skip_transitive_dependency_licensing true
 
-source git: "https://github.com/aerobase/unifiedpush-keycloak-spi.git"
+source git: "https://github.com/C-B4/unifiedpush-keycloak-spi.git"
 
 relative_path "unifiedpush-keycloak-spi"
 build_dir = "#{project_dir}"

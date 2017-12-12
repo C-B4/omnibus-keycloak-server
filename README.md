@@ -2,10 +2,6 @@ Unifiedpush Server Omnibus
 ==================================
 This project creates full-stack platform-specific packages for `keycloak-server`.
 
-Download Binaries
-------------
-Please follow the steps on the [downloads page](https://github.com/aerobase/unifiedpush-server/wiki/Unifiedpush-Installation)
-
 Preperation 
 ------------
 only when runing under non root user.
