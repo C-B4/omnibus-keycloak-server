@@ -30,17 +30,6 @@ build do
   command "cd #{keycloak_services_jar_name}; mvn clean install -DskipTests"
 
   # Add aerobase service implementaion to keycloak-services
-  command "cd #{build_dir}/#{keycloak_services_jar_name}/target/classes/; jar -uf #{keycloak_services_jar} org/keycloak/authentication/authenticators/resetcred/AerobaseResetCredentialEmail.class"
   command "cd #{build_dir}/#{keycloak_services_jar_name}/target/classes/; jar -uf #{keycloak_services_jar} org/keycloak/services/validation/Validation.class"
   command "cd #{build_dir}/#{keycloak_services_jar_name}/target/classes/; jar -uf #{keycloak_services_jar} org/keycloak/authentication/forms/RegistrationProfile.class"
-
-  # extract SPI file
-  command "cd #{build_dir}/#{keycloak_services_jar_name}; jar -xvf #{keycloak_services_jar} META-INF/services/org.keycloak.authentication.AuthenticatorFactory"
-
-  # Replace service class
-  command "cd #{build_dir}/#{keycloak_services_jar_name}; sed -i -e 's/ResetCredentialEmail/AerobaseResetCredentialEmail/g' META-INF/services/org.keycloak.authentication.AuthenticatorFactory"
-
-  # Repack SPI file
-  command "cd #{build_dir}/#{keycloak_services_jar_name}; jar -uf #{keycloak_services_jar} META-INF/services/org.keycloak.authentication.AuthenticatorFactory"
-
 end
