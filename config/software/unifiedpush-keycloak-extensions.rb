@@ -32,4 +32,5 @@ build do
   # Add aerobase service implementaion to keycloak-services
   command "cd #{build_dir}/#{keycloak_services_jar_name}/target/classes/; jar -uf #{keycloak_services_jar} org/keycloak/services/validation/Validation.class"
   command "cd #{build_dir}/#{keycloak_services_jar_name}/target/classes/; jar -uf #{keycloak_services_jar} org/keycloak/authentication/forms/RegistrationProfile.class"
+  command "cd #{build_dir}/#{keycloak_services_jar_name}/target/classes/; jar -uf #{keycloak_services_jar} org/keycloak/authentication/requiredactions/VerifyEmail.class"
 end
