@@ -15,7 +15,7 @@
 #
 
 name "keycloak-server"
-default_version "3.4.2.Final"
+default_version "4.5.0.Final"
 skip_transitive_dependency_licensing true
 
 dependency "wildfly"
