@@ -20,6 +20,10 @@ skip_transitive_dependency_licensing true
 
 dependency "wildfly"
 
+version "4.5.0.Final" do
+  source md5: "d6ab41cc8a147ef9e2ceb75e613df854"
+end
+
 version "3.4.2.Final" do
   source md5: "3878e44a310cb90782e330a445d45907"
 end
@@ -60,10 +64,4 @@ build do
 
   # Strip KC version from packages.
   link "#{install_dir}/embedded/apps/keycloak-server/keycloak-overlay-#{version}", "#{install_dir}/embedded/apps/keycloak-server/keycloak-overlay"
-  link "#{install_dir}/embedded/apps/keycloak-server/keycloak-overlay/modules/system/layers/keycloak/org/keycloak/keycloak-wildfly-server-subsystem/main/keycloak-wildfly-server-subsystem-#{version}.jar", "#{install_dir}/embedded/apps/keycloak-server/keycloak-overlay/modules/system/layers/keycloak/org/keycloak/keycloak-wildfly-server-subsystem/main/keycloak-wildfly-server-subsystem.jar"
-
-  # Extract default-keycloak-subsys-config.cli to /embedded/apps/keycloak-server/keycloak-overlay/
-  # This can't be done during reconfigure step since JDK is not required in production.
-  command "cd #{install_dir}/embedded/apps/keycloak-server/keycloak-overlay/; jar -xvf  #{install_dir}/embedded/apps/keycloak-server/keycloak-overlay/modules/system/layers/keycloak/org/keycloak/keycloak-wildfly-server-subsystem/main/keycloak-wildfly-server-subsystem.jar cli/default-keycloak-subsys-config.cli"
-
 end
